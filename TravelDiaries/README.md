@@ -1,8 +1,9 @@
 # TravelDiaries
 
-旅の記録を記す（SNS）
+Record of the journey
 
-## Javaの最終課題
+## Description
+旅の記録（画像付き）  
 大学2年生の「オブジェクト指向プログラミング」の最終課題
 
 ## Features
@@ -18,24 +19,14 @@
 
 ## Usage
 
-1. Usage
+1. NetBeans
 2. Usage
 3. Usage
 
 ## Installation
 
-    $ git clone https://github.com/b4b4r07/awesome-tool
-
-## Anything Else
-
-AnythingAnythingAnything
-AnythingAnythingAnything
-AnythingAnythingAnything
+    $ git clone https://github.com/YoshikawaTaiki/TravelDiaries
 
 ## Author
 
-[@b4b4r07](https://twitter.com/b4b4r07)
-
-## License
-
-[MIT](http://b4b4r07.mit-license.org)
+[Yoshikawa Taiki](https://twitter.com/yoshikawataiki)
