@@ -6,7 +6,7 @@
 ## 環境導入
 1. Download [Composer](http://getcomposer.org/doc/00-intro.md)
 `brew install composer`.
-2. Download php71 php71-intl
+2. Download php72 php72-intl
 `brew upgrade php`
 `brew install homebrew/php/php71-intl`
 
