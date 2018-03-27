@@ -1,3 +1,11 @@
+# Rails
+Ruby version 2.5.0
+
+Rails version 5.1.5
+
+## Hello Rails
+ここではRailsの基礎から学びます。
+
 ### Railsはその名の通りアプリ開発のレールを提供する
 Railsというフレームワークを語る際に、よく言及されるのがRailsの設計哲学です。
 - DRY(Don't Repeat Yourself) 同じ記述を繰り返さない
