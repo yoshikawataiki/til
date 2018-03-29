@@ -1,5 +1,9 @@
 class HelloController < ApplicationController
     def index
-        render plain: 'こんにちは、世界！'
+        render plain: 'Hello, Rails World!'
+    end
+
+    def view
+        @msg = 'Hello, Rails World!'
     end
 end

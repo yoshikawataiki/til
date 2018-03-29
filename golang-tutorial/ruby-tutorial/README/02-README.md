@@ -40,7 +40,7 @@ end
 ```rb
 class HelloController < ApplicationController
     def index
-        render plain: 'こんにちは、世界！'
+        render plain: 'Hello, Rails World!'
     end
 end
 ```
@@ -78,6 +78,8 @@ getメソッドはもっともシンプルな手段です。これで「http://l
 ### サンプルを実行
 Model-View-Controllerのうち、Controllerに相当する部分だけですが、これだけでも最低限の動作は確認できます。まずは、この状態でhelloコントローラーの挙動を確認してみましょう。
 `http://localhost:3000/hello/index`
+
+![hello](../img/hello.png)
 
 #### コントローラーの命名規則
 Railsの基本的な思想は、CoC。
