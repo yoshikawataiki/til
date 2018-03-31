@@ -62,4 +62,5 @@ Rails.application.routes.draw do
 end
 ```
 
+「http://localhost:3000/hello/view 」にアクセス。
 ![view](../img/view.png)
