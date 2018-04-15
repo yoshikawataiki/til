@@ -1,0 +1,9 @@
+@import './sub.scss';
+
+body {
+  background-color: #cfc;
+
+  & > p {
+    color: #00f;
+  }
+}
