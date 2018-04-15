@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production --module-bind 'ts=ts-loader' --resolve-extensions .ts,.js",
-    "start": "webpack  --mode development; webpack-dev-server"
+    "start": "webpack  --mode development; webpack-dev-server --mode development"
   },
   "author": "YoshikawaTaiki",
   "license": "ISC",

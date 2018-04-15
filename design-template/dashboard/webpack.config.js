@@ -14,7 +14,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './src/view/index.ejs'
+      template: './src/index.ejs'
     })
   ],
   resolve: {
