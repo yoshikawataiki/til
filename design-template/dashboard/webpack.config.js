@@ -6,11 +6,11 @@ module.exports = {
   entry: path.resolve(__dirname, './src/ts/main.ts'),
   output: {
     path: path.resolve(__dirname, './public'),
-    filename: './js/login.js'
+    filename: './js/dashboard.js'
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: './css/login.css'
+      filename: './css/dashboard.css'
     }),
     new HtmlWebpackPlugin({
       filename: './index.html',
