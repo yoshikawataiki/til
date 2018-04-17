@@ -1,18 +1,19 @@
 {
-  "name": "login",
+  "name": "dashboard",
   "version": "1.0.0",
   "description": "login modern web page",
   "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production --module-bind 'ts=ts-loader' --resolve-extensions .ts,.js",
-    "start": "webpack  --mode development; webpack-dev-server"
+    "start": "webpack  --mode development; webpack-dev-server --mode development"
   },
   "author": "YoshikawaTaiki",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "bulma-scss": "^0.6.0",
+    "chart.js": "^2.7.2",
     "css-loader": "^0.28.11",
     "ejs-compiled-loader": "^1.1.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
