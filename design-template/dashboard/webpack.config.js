@@ -15,6 +15,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './src/index.ejs'
+    }),
+    new HtmlWebpackPlugin({
+      filename: './add.html',
+      template: './src/add.ejs'
     })
   ],
   resolve: {
