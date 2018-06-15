@@ -37,7 +37,7 @@ var app4 = new Vue({
     ]
   }
 })
-// reverse message!
+// Reverse message!
 var app5 = new Vue({
   el: '#app-5',
   data: {
@@ -47,5 +47,12 @@ var app5 = new Vue({
     reverseMessage: function () {
       this.message = this.message.split('').reverse().join('')
     }
+  }
+})
+// Handling User Input
+var app6 = new Vue({
+  el: '#app-6',
+  data: {
+    message: 'Hello Vue!'
   }
 })
