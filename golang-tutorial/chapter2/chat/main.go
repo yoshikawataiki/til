@@ -14,6 +14,7 @@ import (
 	"github.com/stretchr/gomniauth/providers/facebook"
 	"github.com/stretchr/gomniauth/providers/github"
 	"github.com/stretchr/gomniauth/providers/google"
+	"github.com/stretchr/objx"
 )
 
 // templは1つのテンプレートを表します
@@ -30,7 +31,13 @@ func (t *templateHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			template.Must(template.ParseFiles(filepath.Join("templates",
 				t.filename)))
 	})
-	t.templ.Execute(w, r)
+	data := map[string]interface{}{
+		"Host": r.Host,
+	}
+	if authCookie, err := r.Cookie("auth"); err == nil {
+		data["UserData"] = objx.MustFromBase64(authCookie.Value)
+	}
+	t.templ.Execute(w, data)
 }
 
 func main() {
@@ -39,9 +46,9 @@ func main() {
 	// Gomniauthのセットアップ
 	gomniauth.SetSecurityKey("セキュリティキー")
 	gomniauth.WithProviders(
-		facebook.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/facebook"),
-		github.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/github"),
-		google.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/google"),
+		facebook.New("クライアントID", "秘密鍵", "http://localhost:8080/auth/callback/facebook"),
+		github.New("クライアントID", "秘密鍵", "http://localhost:8080/auth/callback/github"),
+		google.New("クライアントID", "秘密鍵", "http://localhost:8080/auth/callback/google"),
 	)
 
 	r := newRoom()
