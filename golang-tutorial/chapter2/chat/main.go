@@ -46,9 +46,9 @@ func main() {
 	// Gomniauthのセットアップ
 	gomniauth.SetSecurityKey("セキュリティキー")
 	gomniauth.WithProviders(
-		facebook.New("クライアントID", "秘密鍵", "http://localhost:8080/auth/callback/facebook"),
-		github.New("クライアントID", "秘密鍵", "http://localhost:8080/auth/callback/github"),
-		google.New("クライアントID", "秘密鍵", "http://localhost:8080/auth/callback/google"),
+		facebook.New("2168342373399031", "35bd2c503f50e67bd2acaae5e1cb67e8", "http://localhost:8080/auth/callback/facebook"),
+		github.New("2f77bb75966787e7817e", "1afa894cd504afa81bae7ac43214ac6683836634", "http://localhost:8080/auth/callback/github"),
+		google.New("45732349782-8f3cca16ockutkfoa8igmbgtksr6071a.apps.googleusercontent.com", "-z7GwwWyqhdRuYh9gXCbwSsN", "http://localhost:8080/auth/callback/google"),
 	)
 
 	r := newRoom()

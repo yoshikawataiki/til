@@ -8,4 +8,5 @@ Go言語を学んでいくことにする
 Go言語によるWebアプリケーション開発
 
 Chapter1では、チャットアプリの作成を行う
-Chapter2では、Chpater1の改良を行う
+Chapter2では、OAuth認証を追加する
+Chapter3では、プロフィール画像を追加する
