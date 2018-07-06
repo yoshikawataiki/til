@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"golang-tutorial/chapter1/trace"
+	"golang-tutorial/chapter3/trace"
 
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/objx"

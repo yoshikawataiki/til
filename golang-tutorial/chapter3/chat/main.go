@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"golang-tutorial/chapter1/trace"
 	"html/template"
 	"log"
 	"net/http"
@@ -10,12 +9,20 @@ import (
 	"path/filepath"
 	"sync"
 
+	"golang-tutorial/chapter3/trace"
+
 	"github.com/stretchr/gomniauth"
 	"github.com/stretchr/gomniauth/providers/facebook"
 	"github.com/stretchr/gomniauth/providers/github"
 	"github.com/stretchr/gomniauth/providers/google"
 	"github.com/stretchr/objx"
 )
+
+// 現在アクティブなAvatarの実装
+var avatars Avatar = TryAvatars{
+	UseFileSystemAvatar,
+	UseAuthAvatar,
+	UseGravatar}
 
 // templは1つのテンプレートを表します
 type templateHandler struct {
@@ -46,9 +53,9 @@ func main() {
 	// Gomniauthのセットアップ
 	gomniauth.SetSecurityKey("セキュリティキー")
 	gomniauth.WithProviders(
-		facebook.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/facebook"),
-		github.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/github"),
-		google.New("クライアントID", "秘密の値", "http://localhost:8080/auth/callback/google"),
+		facebook.New("2168342373399031", "35bd2c503f50e67bd2acaae5e1cb67e8", "http://localhost:8080/auth/callback/facebook"),
+		github.New("2f77bb75966787e7817e", "1afa894cd504afa81bae7ac43214ac6683836634", "http://localhost:8080/auth/callback/github"),
+		google.New("45732349782-8f3cca16ockutkfoa8igmbgtksr6071a.apps.googleusercontent.com", "-z7GwwWyqhdRuYh9gXCbwSsN", "http://localhost:8080/auth/callback/google"),
 	)
 
 	r := newRoom()
@@ -66,6 +73,12 @@ func main() {
 		w.Header()["Location"] = []string{"/chat"}
 		w.WriteHeader(http.StatusTemporaryRedirect)
 	})
+	http.Handle("/upload", &templateHandler{filename: "upload.html"})
+	http.HandleFunc("/uploader", uploaderHandler)
+	http.Handle("/avatars/",
+		http.StripPrefix("/avatars/",
+			http.FileServer(http.Dir("./avatars"))))
+
 	http.Handle("/room", r)
 	// チャットルームを開始します
 	go r.run()
