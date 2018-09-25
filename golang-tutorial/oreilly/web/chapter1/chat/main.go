@@ -2,13 +2,14 @@ package main
 
 import (
 	"flag"
-	"golang-tutorial/chapter1/trace"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"sync"
+
+	"github.com/yoshikawataiki/golang-tutorial/oreilly/web/chapter1/trace"
 )
 
 // templは1つのテンプレートを表します

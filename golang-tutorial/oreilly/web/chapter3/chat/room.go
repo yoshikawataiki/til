@@ -4,10 +4,9 @@ import (
 	"log"
 	"net/http"
 
-	"golang-tutorial/chapter1/trace"
-
 	"github.com/gorilla/websocket"
 	"github.com/stretchr/objx"
+	"github.com/yoshikawataiki/golang-tutorial/oreilly/web/chapter3/trace"
 )
 
 type room struct {
