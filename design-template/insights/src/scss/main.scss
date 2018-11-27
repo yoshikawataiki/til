@@ -1,0 +1,35 @@
+@import 'header';
+@import 'footer';
+@import 'layout';
+@import '~bulma-scss/css/bulma';
+
+  
+  // navigation left area
+  .aside{
+    background: #2E363F;    
+    padding: 2em .2em 0 1em;
+  
+    a{
+      color: #afb8c3;
+    }
+  
+    .menu-list {
+      li {
+        margin-top: .5em;
+      }
+    }
+  }
+  
+  // main area
+  .main{
+    padding: 2em 1em 0 1em;
+  }
+  
+  .menu-label{
+    color: #00d1b2;
+    margin-left: .5em;
+  }
+  
+  .block{
+    margin-top: .5em;
+  }
